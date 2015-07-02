@@ -16,19 +16,16 @@ You can see the bench mark test result in bench_mark.md.
 4. modify the OS and ARCH in allmake.sh.
 5. $ . allmake.sh
 
-server_dgram  - a server using unblock SOCK_DGRAM socket by checking read/write frequently.
-client_dgram  - a client using unblock SOCK_DGRAM socket by checking read/write frequently.
+udt_dgram_server  - a server using unblock SOCK_DGRAM socket by checking read/write frequently.
+udt_dgram_client  - a client using unblock SOCK_DGRAM socket by checking read/write frequently.
 
-server_stream - a server using unblock SOCK_STREAM socket by checking read/write frequently.
-client_stream - a client using unblock SOCK_STREAM socket by checking read/write frequently.
+udt_stream_server - a server using unblock SOCK_STREAM socket by checking read/write frequently.
+udt_stream_client - a client using unblock SOCK_STREAM socket by checking read/write frequently.
 
 
 ### Run test:
-server/server 127.0.0.1 12345
-client_epoll/client_epoll 22222 127.0.0.1 12345 1400 2>>./state.log
-or  sh launcher_clients.sh
-
-
+udt_bench_mark/udt_dgram_server/udt_dgram_server 127.0.0.1 12345
+udt_bench_mark/udt_dgram_client/udt_dgram_client 22222 127.0.0.1 12345 1400 2>>./state.log
 
 
 Other notes:
