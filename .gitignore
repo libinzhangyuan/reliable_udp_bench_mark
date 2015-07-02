@@ -26,3 +26,9 @@
 *.exe
 *.out
 *.app
+
+tags
+udt4
+
+udt_bench_mark/udt_dgram_client/udt_dgram_client
+udt_bench_mark/udt_dgram_server/udt_dgram_server
