@@ -67,7 +67,8 @@ void handle_one_msg(const std::string& msg, const std::string& total_recved_str)
         uint64_t interval = cur_time - send_time;
         recv_package_interval_.push_back(interval);
         recv_package_interval10_.push_back(interval);
-        std::cout << interval << ":" << total_recved_str.size() << "\t";
+        //std::cout << interval << ":" total_recved_str.size() << "\t";
+        std::cout << interval << "\t";
 
         if (static_good_recv_count % 10 == 0)
         {

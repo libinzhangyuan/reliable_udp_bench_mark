@@ -83,8 +83,8 @@ int UDTClient::CreateSocket(void)
         //int snd_buf = 16000;// 8192;
         //int rcv_buf = 16000;//8192;
         //int snd_buf = 7300;// 1460 * 5
-        int snd_buf = 93440;// 1460 * 5
-        int rcv_buf = 93440;
+        int snd_buf = 934400;// 1460 * 5
+        int rcv_buf = 934400;
         UDT::setsockopt(sock_, 0, UDT_SNDBUF, &snd_buf, sizeof(int));
         UDT::setsockopt(sock_, 0, UDT_RCVBUF, &rcv_buf, sizeof(int)); 
 

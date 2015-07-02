@@ -25,5 +25,10 @@
 * $ udt_bench_mark/udt_stream_server/udt_stream_server 127.0.0.1 12345
 * $ udt_bench_mark/udt_stream_client/udt_stream_client 22222 127.0.0.1 12345 1400 2>>./state.log
 
-
 #### Other notes:
+##### 1. the meaning of state.log
+* . - epoll_wait timeout return. means no socket prepare.
+* N - send: socket is non-blocking (UDT_SNDSYN = false) but no buffer space is available.
+* R - remove write event to socket
+* A - add write event to socket
+* B - epoll busy. sleep for stop add more msg to send buf.
