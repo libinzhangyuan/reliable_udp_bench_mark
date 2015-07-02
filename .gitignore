@@ -29,6 +29,9 @@
 
 tags
 udt4
+state.log
 
 udt_bench_mark/udt_dgram_client/udt_dgram_client
 udt_bench_mark/udt_dgram_server/udt_dgram_server
+udt_bench_mark/udt_stream_client/udt_stream_client
+udt_bench_mark/udt_stream_server/udt_stream_server
