@@ -1,4 +1,6 @@
-### UDT    -   UDP-based Data Transfer Protocol   https://sourceforge.net/projects/udt/
+### UDT    -   UDP-based Data Transfer Protocol
+[official webside](https://sourceforge.net/projects/udt/)
+
 
 #### Building udt_bench_mark:
 * making gcc version >= 4.8
@@ -17,11 +19,11 @@
 
 
 #### Run test:
-##### SOCK_DGRAM:
+###### SOCK_DGRAM:
 * $ udt_bench_mark/udt_dgram_server/udt_dgram_server 127.0.0.1 12345
 * $ udt_bench_mark/udt_dgram_client/udt_dgram_client 22222 127.0.0.1 12345 1400 2>>./state.log
 
-#####SOCK_STREAM:
+###### SOCK_STREAM:
 * $ udt_bench_mark/udt_stream_server/udt_stream_server 127.0.0.1 12345
 * $ udt_bench_mark/udt_stream_client/udt_stream_client 22222 127.0.0.1 12345 1400 2>>./state.log
 
