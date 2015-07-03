@@ -21,8 +21,6 @@
 * a. Bench mark log for 500 bytes in every 50 milliseconds. [here](https://github.com/libinzhangyuan/udt_patch_for_epoll/blob/master/bench_mark/udt_500.log).
 * b. Bench mark log for 50 bytes in every 50 milliseconds. [here](https://github.com/libinzhangyuan/udt_patch_for_epoll/blob/master/bench_mark/udt_50.log).
 * c. Bench mark log for 500 bytes in every 50 milliseconds using another framework kcp. [here](https://github.com/libinzhangyuan/udt_patch_for_epoll/blob/master/bench_mark/kcp_500.log). <br>
-kcp is a [Fast and Reliable ARQ Protocol](https://github.com/skywind3000/kcp) <br>
-The test project of kcp is [asio_kcp](https://github.com/libinzhangyuan/asio_kcp) <br>
 I run b and c at the same time on same computer. So we known  the network situation by comparing log from b and c. <br>
 
 ### The conclusion of this UDT SOCK_DGRAM epoll mode:
@@ -38,7 +36,7 @@ This test call unblock recv and send repeatedly.
 
 * a. Bench mark log for 500 bytes in every 50 milliseconds SOCK_DGRAM. [here](https://github.com/libinzhangyuan/reliable_udp_bench_mark/blob/master/bench_mark_log/udt_dgram_500.log)
 * b. Bench mark log for 500 bytes in every 50 milliseconds SOCK_STREAM. [here](https://github.com/libinzhangyuan/reliable_udp_bench_mark/blob/master/bench_mark_log/udt_stream500.log)
-* c. Bench mark log for 500 bytes in every 50 milliseconds using another framework kcp. [here](https://github.com/libinzhangyuan/reliable_udp_bench_mark/blob/master/bench_mark_log/kcp_500.log)
+* c. Bench mark log for 500 bytes in every 50 milliseconds using another framework kcp. [here](https://github.com/libinzhangyuan/reliable_udp_bench_mark/blob/master/bench_mark_log/kcp_500.log) <br>
 I run b and c at the same time on same computer. So we known the network situation by comparing log from b and c. <br>
 
 ### The conclusion of UDT without epoll:
@@ -48,9 +46,9 @@ I run b and c at the same time on same computer. So we known the network situati
    - Test project is [here](https://github.com/libinzhangyuan/enet_bench_test)
    - It change the ENET_PEER_DEFAULT_ROUND_TRIP_TIME from 500 to 50.
 * a. enet log for 500 bytes in every 50 milliseconds [here](https://github.com/libinzhangyuan/enet_bench_test/blob/master/bench_mark_log/enet_500.log)
-* b. kcp log for 500 bytes in every 50 milliseconds at same time with a [here](https://github.com/libinzhangyuan/enet_bench_test/blob/master/bench_mark_log/kcp_500.log)
+* b. kcp log for 500 bytes in every 50 milliseconds at same time with a [here](https://github.com/libinzhangyuan/enet_bench_test/blob/master/bench_mark_log/kcp_500.log) <br>
    - I run a and b at the same time on same computer. So we known the network situation by comparing log from a and b. <br>
-   - The lag is same as 50 when do not change ENET_PEER_DEFAULT_ROUND_TRIP_TIME. <br>
+   - The lag is same as a when do not change ENET_PEER_DEFAULT_ROUND_TRIP_TIME. <br>
 
 ### The conclusion of enet test
 * The enet is better than UDT about realtime pvp game.
@@ -58,6 +56,7 @@ I run b and c at the same time on same computer. So we known the network situati
 * It is worse than kcp. But some game allow 1 second lag.
 
 ## kcp
+* the test project is [here](https://github.com/libinzhangyuan/asio_kcp)
 * the bench mark log of kcp is show in UDT and enet test.
 * kcp's lag less than 1 second always. The lag is 1/3 comparing to kcp when network lag happen.
 * kcp is better than UDT and enet. The lag is less than 2 seconds when network lag happen.
@@ -66,16 +65,17 @@ I run b and c at the same time on same computer. So we known the network situati
 
 # Final conclusion.
 #### kcp
-* The kcp is the first choice for realtime pvp game.
-* The lag is less than 1 second when network lag happen.  3 times better than enet when lag happen.
+* The kcp is the first choice for realtime pvp game. <br>
+* The lag is less than 1 second when network lag happen.  3 times better than enet when lag happen. <br>
 #### enet
-* The enet is a good choice if your game allow 2 second lag.
+* The enet is a good choice if your game allow 2 second lag. <br>
 #### UDT
-* UDT is a bad idea. It always sink into badly situation of more than serval seconds lag. And the recovery is not expected.
+* UDT is a bad idea. It always sink into badly situation of more than serval seconds lag. And the recovery is not expected. <br>
 
 ### other things may change your choice.
 * enet has the problem of lack of doc. And it has lots of functions that you may intrest.
-* kcp's doc is chinese. (Good thing is the function detail which is writen in code is english. And you can use asio_kcp which is a good wrap.)
-    The kcp is a simple thing. You will write more code if you want more feature.
+* kcp's doc is chinese.<br>
+    Good thing is the function detail which is writen in code is english. And you can use asio_kcp which is a good wrap.<br>
+    The kcp is a simple thing. You will write more code if you want more feature.<br>
 * UDT has a perfect doc.
-    UDT may has more bug than others as I feeling.
+    UDT may has more bug than others as I feeling.<br>
