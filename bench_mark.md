@@ -56,7 +56,7 @@ I run b and c at the same time on same computer. So we known the network situati
 * It is worse than kcp. But some game allow 1 second lag.
 
 ## kcp
-* the test project is [here](https://github.com/libinzhangyuan/asio_kcp)
+* the test project is [here](https://github.com/libinzhangyuan/asio_kcp) - please checkout the tag kcp_bench_mark_test
 * the bench mark log of kcp is show in UDT and enet test.
 * kcp's lag less than 1 second always. The lag is 1/3 comparing to kcp when network lag happen.
 * kcp is better than UDT and enet. The lag is less than 2 seconds when network lag happen.
