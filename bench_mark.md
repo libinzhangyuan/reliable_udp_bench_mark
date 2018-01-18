@@ -73,7 +73,7 @@ I run b and c at the same time on same computer. So we known the network situati
 * UDT is a bad idea. It always sink into badly situation of more than serval seconds lag. And the recovery is not expected. <br>
 
 ### other things may change your choice.
-* enet has the problem of lack of doc. And it has lots of functions that you may intrest.
+* enet has the problem of lack of doc. And it has lots of functions that you may have interest in.
 * kcp's doc is chinese.<br>
     Good thing is the function detail which is writen in code is english. And you can use asio_kcp which is a good wrap.<br>
     The kcp is a simple thing. You will write more code if you want more feature.<br>
